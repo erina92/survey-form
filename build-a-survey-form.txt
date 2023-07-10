@@ -1,0 +1,336 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreeCodeCamp Survey Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 id="title">Survey Form Practice</h1>
+        <p id="description">
+          Thank you for taking the time to help me improve my skills
+        </p>
+      </div>
+      <!-- form -->
+      <form id="survey-form">
+        <div class="form-group">
+          <label for="name" id="name-label">Name:</label
+          ><input
+            placeholder="Enter your name"
+            type="text"
+            id="name"
+            required
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email" id="email-label">Email Address:</label
+          ><input
+            type="email"
+            placeholder="Enter your email"
+            id="email"
+            name="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="number-label">Age(optional):</label>
+          <input
+            type="number"
+            placeholder="Age"
+            min="10"
+            max="120"
+            class="form-control"
+            id="number"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Which option best matches your coding skills?</label>
+          <select id="dropdown" name="coding" class="form-control">
+            <option value="">Select an Option...</option>
+            <option value="beginner">Beginner (just started learning)</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="expert">
+              Expert/Pro (I'm a professional developer!)
+            </option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Would you recommend FreeCodeCamp to a friend?</label>
+          <label>
+            <input
+              type="radio"
+              name="recommendation"
+              value="yes"
+              class="input-radio"
+              checked
+            />
+            Yes
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="recommendation"
+              value="no"
+              class="input-radio"
+            />
+            No
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="recommendation"
+              value="maybe"
+              class="input-radio"
+            />
+            Maybe
+          </label>
+        </div>
+        <div class="form-group">
+          <label>What is your favorite feature of FreeCodeCamp?</label>
+          <select name="most-like" id="most-like" class="form-control" required>
+            <option value="">Select one option</option>
+            <option value="challenges">Challenges</option>
+            <option value="community">Community</option>
+            <option value="projects">Projects</option>
+            <option value="openSource">Open Source</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label
+            >What category do you like the most? (Check all that apply)</label
+          >
+          <label>
+            <input
+              type="checkbox"
+              class="input-checkbox"
+              value="front-end-projects"
+              name="preferred-category"
+              id="preferred-category"
+            />
+            Front-end Projects
+          </label>
+          <label
+            ><input
+              type="checkbox"
+              class="input-checkbox"
+              value="back-end-projects"
+              name="preferred-category"
+              id="preferred-category"
+            />
+            Back-end Projects</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="input-checkbox"
+              value="data visualization"
+              name="preferred-category"
+              id="preferred-category"
+            />
+            Data Visualization</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="input-checkbox"
+              value="challenges"
+              name="preferred-category"
+              id="preferred-category"
+            />
+            Challenges</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="input-checkbox"
+              value="forum"
+              name="preferred-category"
+              id="preferred-category"
+            />
+            Forum</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="input-checkbox"
+              value="open source community"
+              name="preferred-category"
+              id="preferred-category"
+            />
+            Open Source Community</label
+          >
+        </div>
+        <div class="form-group">
+          <p>Any comments or suggestions are welcome</p>
+          <textarea
+            rows="4"
+            cols="50"
+            placeholder="Enter your comments or suggestions here"
+            name="comment"
+            class="input-textarea"
+            id="comments"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" id="submit" class="submit-button">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
+
+** end of undefined **
+
+** start of undefined **
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0px auto;
+  font-size: 16px;
+  font-family: "Handlee", cursive;
+  line-height: 1.4;
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://images.unsplash.com/photo-1548222606-6c4f581fd09d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1197&q=80");
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  min-width: 600px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin: 1em auto;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+form {
+  width: 60vw;
+  max-width: 700px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding: 50px 50px;
+  background-color: rgba(27, 27, 50, 0.8);
+  color: white;
+  font-size: 20px;
+}
+
+.form-control {
+  width: 100%;
+}
+label {
+  display: block;
+  margin: 1rem 0;
+}
+
+input,
+select {
+  margin: 0;
+  line-height: inherit;
+  padding: 10px;
+}
+
+input,
+textarea {
+  color: #ffffff;
+}
+
+textarea {
+  width: 100%;
+}
+
+button {
+  display: block;
+  width: 60%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: #1b6b93;
+  border-color: #1b6b93;
+  min-width: 300px;
+  border-radius: 20px;
+}
+
+/* Media Queries for Smartphones */
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+    min-width: auto;
+    padding: 0 20px;
+  }
+
+  form {
+    width: 100%;
+    max-width: none;
+    min-width: auto;
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+/* Media Queries for Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    max-width: 100%;
+    min-width: auto;
+    padding: 0 40px;
+  }
+
+  form {
+    width: 100%;
+    max-width: none;
+    min-width: auto;
+    padding: 40px;
+  }
+
+  button {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+
+** end of undefined **
+

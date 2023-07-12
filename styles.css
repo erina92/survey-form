@@ -79,13 +79,14 @@ textarea {
 }
 
 button {
-  width: 60%;
+  width: 20%;
   margin: 1em auto;
   height: 2em;
   font-size: 1.1rem;
   background-color: #1b6b93;
   border-color: #1b6b93;
   border-radius: 20px;
+  display: block;
 }
 
 /* Media Queries for Smartphones */
@@ -108,7 +109,7 @@ button {
   }
 
   button {
-    width: 100%;
+    width: 50%;
     min-width: auto;
   }
 }
@@ -129,7 +130,7 @@ button {
   }
 
   button {
-    width: 100%;
+    width: 50%;
     min-width: auto;
   }
 }
